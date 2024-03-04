@@ -43,13 +43,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Run Python app
-        run: python main.py
+      run: python main.py
 
-      - name: Save output to file
-        run: echo "${{ steps.run_python_app.outputs.stdout }}" > output.txt  # Save the output of the Python script to a file
+    - name: Save output to file
+      run: echo "${{ steps.run_python_app.outputs.stdout }}" > output.txt  # Save the output of the Python script to a file
 
-      - name: Upload output artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: python-app-output
-          path: output.txt  # Upload the output file as an artifact for further reference
+    - name: Upload output artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: python-app-output
+        path: output.txt  # Upload the output file as an artifact for further reference
