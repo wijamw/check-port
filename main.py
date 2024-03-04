@@ -19,7 +19,7 @@ def check_port(hostname, port):
         print(f"An error occurred: {e}")
 
 # Replace 'example.com' with the hostname you want to check
-hostname = 'example.com'
+hostname = 'surabaya.go.id'
 port = 443  # Port to check
 
 check_port(hostname, port)
