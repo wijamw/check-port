@@ -50,6 +50,9 @@ jobs:
     - name: Run Python app
       run: python main.py
 
+    - name: Display App ID
+      run: echo "My APP_ID value is ${{ vars.APP_ID }}"
+      
     - name: Save output to file
       run: echo "${{ steps.run_python_app.outputs.stdout }}" > output.txt  # Save the output of the Python script to a file
 
