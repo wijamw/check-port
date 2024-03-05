@@ -45,3 +45,6 @@ jobs:
 
     - name: Display App ID
       run: echo "My APP_ID value is ${{ vars.APP_ID }}" > appid.txt
+
+    - name: Copy Server App
+      run: cp server.py ${{ vars.GIT_WORKDIR }}
