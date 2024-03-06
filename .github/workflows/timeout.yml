@@ -5,7 +5,7 @@ on:
 
 jobs:
   timeout:
-    timeout-minutes: 2
+    timeout-minutes: 1
     runs-on: [ubuntuwsl, ubuntu-latest]
     permissions:
       actions: write
