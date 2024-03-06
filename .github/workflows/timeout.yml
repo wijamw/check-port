@@ -6,7 +6,7 @@ on:
 jobs:
   timeout:
     timeout-minutes: 1
-    runs-on: [ubuntuwsl, ubuntu-latest]
+    runs-on: ubuntu-latest
     permissions:
       actions: write
     steps:
