@@ -12,7 +12,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: ubuntuwsl
+    runs-on: [ubuntuwsl, ubuntu-latest]
 
     steps:
     - uses: actions/checkout@v3
@@ -20,8 +20,8 @@ jobs:
     - name: Run Python app
       run: python main.py > output.txt
 
-    - name: Display App ID
-      run: echo "My APP_ID value is ${{ vars.APP_ID }}" > appid.txt
+    # - name: Display App ID
+    #   run: echo "My APP_ID value is ${{ vars.APP_ID }}" > appid.txt
 
-    - name: Copy Server App
-      run: cp server.py /home/wijamw/pyproject/server.py
+    # - name: Copy Server App
+    #   run: cp server.py /home/wijamw/pyproject/server.py
