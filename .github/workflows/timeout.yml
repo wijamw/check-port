@@ -1,0 +1,18 @@
+name: Cancel deploy on timeout
+
+on:
+  workflow_dispatch:
+
+jobs:
+  timeout:
+    timeout-minutes: 2
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Monitor deployment for timeout and cancel if crossed the threshold
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sleep 1m
+          gh -R {owner}/{repo} run list -w deploy.yml -s queued --json databaseId -q .[].databaseId | xargs gh -R {owner}/{repo} run cancel
